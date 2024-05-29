@@ -8,7 +8,6 @@ class Game
 
   def initialize(max_attempt: 10, file:)
     @random_word = RandomWord.random_word
-    p @random_word
     @max_attempt = max_attempt
     @attempt = 0
     @file = file
@@ -20,7 +19,6 @@ class Game
 
   def start
     if new_game
-
       incorrect_cryptic_letter = []
       puts "Below is the number of letters to win the game in 10 attempts"
       cryptic_letters = "-" * @random_word.length
@@ -30,9 +28,6 @@ class Game
       puts "choose from lists of saved game"
       existing_data = @save_instance.load_existing_file
       @save_instance.all_saves
-      # existing_data.each_with_index do |hash, index|
-      #   puts "#{index}. Attempt_left: #{hash["attempt_left"]}, cryptic_letters: #{hash["cryptic_letters"]}, incorrect_cryptic_letters: #{hash["incorrect_cryptic_letter"]}"
-      # end
       puts
       print "choose: "
       choose = gets.chomp.to_i
@@ -114,12 +109,6 @@ class Game
       end
     end
   end
-
-  # def game_won(cryptic_letters)
-  #   if  cryptic_letters.downcase == @random_word.downcase
-  #     return "You win the game!"
-  #   end
-  # end
 end
 
 game = Game.new(file: "save.json")
