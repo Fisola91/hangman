@@ -68,7 +68,6 @@ class Game
         @attempt += 1
       end
 
-      # game_won(cryptic_letters)
       if  cryptic_letters.downcase == @random_word.downcase
         return "You win the game!"
       end

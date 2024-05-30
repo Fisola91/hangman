@@ -1,0 +1,4 @@
+Require is generally used to look in certain pre-determined directory locations for Ruby Libraries.
+when require is used in Ruby, Ruby look up to the global variable $LOAD_PATH(An array of lib directories where Ruby looks when it comes across a "require")
+The really nice thing about the way require works in combination with the load path is that as long as a library is in the load path, there is no need to specify the full path or even to know where exactly it is located.
+require '../my_file.rb', this means the path is relative to the current working directory of the process executing this line and NOT necessarily the file it was written in.
