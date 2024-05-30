@@ -4,11 +4,11 @@ class Save
     @save_data = { save: [] }
   end
 
-  def save_to_file(random_word, cryptic_letters, incorrect_cryptic_letter, attempt_left)
+  def save_to_file(random_word, encoded_words, incorrect_cryptic_letter, attempt_left)
     new_data = {
       word: random_word,
       attempt_left: attempt_left,
-      cryptic_letters: cryptic_letters,
+      encoded_words: encoded_words,
       incorrect_cryptic_letter: incorrect_cryptic_letter
     }
 
@@ -35,7 +35,7 @@ class Save
 
   def all_saves
     load_existing_file.each_with_index do |hash, index|
-      puts "#{index}. Attempt_left: #{hash["attempt_left"]}, cryptic_letters: #{hash["cryptic_letters"]}, incorrect_cryptic_letters: #{hash["incorrect_cryptic_letter"]}"
+      puts "#{index}. Attempt_left: #{hash["attempt_left"]}, encoded_words: #{hash["encoded_words"]}, incorrect_cryptic_letters: #{hash["incorrect_cryptic_letter"]}"
     end
   end
 end

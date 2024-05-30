@@ -21,8 +21,8 @@ class Game
     if new_game
       incorrect_cryptic_letter = []
       puts "Below is the number of letters to win the game in 10 attempts"
-      cryptic_letters = "-" * @random_word.length
-      puts "Correct letter will be displayed in the right position: #{cryptic_letters}"
+      encoded_words = "-" * @random_word.length
+      puts "Correct letter will be displayed in the right position: #{encoded_words}"
     elsif File.size(file) > 0
       puts
       puts "choose from lists of saved game"
@@ -33,7 +33,7 @@ class Game
       choose = gets.chomp.to_i
       chose_data = existing_data[choose]
       @save_instance.remove_from_record(choose)
-      cryptic_letters = chose_data["cryptic_letters"]
+      encoded_words = chose_data["encoded_words"]
       incorrect_cryptic_letter = chose_data["incorrect_cryptic_letter"]
       attempt = chose_data["attempt_left"]
       @attempt = max_attempt - attempt
@@ -45,18 +45,18 @@ class Game
     while @attempt < max_attempt
       puts
       attempt_left
-      feedback(incorrect_cryptic_letter, cryptic_letters)
+      feedback(incorrect_cryptic_letter, encoded_words)
       print "Guess a letter: "
       guess = gets.chomp!
 
       if @random_word.include?(guess)
         puts
-        if cryptic_letters.include?(guess)
-          last_index_letter = cryptic_letters.rindex(guess)
-          update_cryptic_letters(last_index_letter, guess, cryptic_letters)
+        if encoded_words.include?(guess)
+          last_index_letter = encoded_words.rindex(guess)
+          update_encoded_words(last_index_letter, guess, encoded_words)
         else
           letter_position = @random_word.index(guess)
-          cryptic_letters[letter_position] = guess
+          encoded_words[letter_position] = guess
         end
 
         @attempt += 1
@@ -64,18 +64,18 @@ class Game
         puts
         # puts incorrect_cryptic_letter
         incorrect_cryptic_letter << guess
-        feedback(incorrect_cryptic_letter,  cryptic_letters)
+        feedback(incorrect_cryptic_letter,  encoded_words)
         @attempt += 1
       end
 
-      if  cryptic_letters.downcase == @random_word.downcase
+      if  encoded_words.downcase == @random_word.downcase
         return "You win the game!"
       end
       puts "Do you want to save the game and leave?"
       puts "y/n"
       save_and_end = gets.chomp.include?("y")
       if save_and_end
-        @save_instance.save_to_file(@random_word, cryptic_letters, incorrect_cryptic_letter, attempt_left)
+        @save_instance.save_to_file(@random_word, encoded_words, incorrect_cryptic_letter, attempt_left)
         return "Data saved, bye!"
       end
     end
@@ -96,14 +96,14 @@ class Game
     attempt_left
   end
 
-  def update_cryptic_letters(last_index_letter, guess, cryptic_letters)
+  def update_encoded_words(last_index_letter, guess, encoded_words)
     random_word = @random_word.chars
     random_word.each_with_index do |letter, index|
       if index == last_index_letter
         substring = random_word[(last_index_letter + 1)..-1]
         break if substring.index(guess).nil?
         letter_position = last_index_letter + 1 + substring.index(guess)
-        cryptic_letters[letter_position ] = guess
+        encoded_words[letter_position ] = guess
         break
       end
     end
