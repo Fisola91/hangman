@@ -26,7 +26,7 @@ class Save
     @save_data[:save] = existing_data["save"]
   end
 
-  def remove_from_record(index) #remove record from saves
+  def remove_record_from_saves(index) #remove record from saves
     existing_data = load_existing_file
     existing_data.delete_at(index)
     @save_data[:save] = existing_data

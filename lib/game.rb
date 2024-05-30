@@ -32,7 +32,7 @@ class Game
       print "choose: "
       choose = gets.chomp.to_i
       chose_data = existing_data[choose]
-      @save_instance.remove_from_record(choose)
+      @save_instance.remove_record_from_saves(choose)
       encoded_words = chose_data["encoded_words"]
       incorrect_cryptic_letter = chose_data["incorrect_cryptic_letter"]
       attempt = chose_data["attempt_left"]
