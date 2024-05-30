@@ -6,8 +6,8 @@ require_relative "save"
 class Game
   attr_reader :max_attempt, :attempt, :new_game, :file
 
-  def initialize(max_attempt: 10, file:)
-    @random_word = RandomWord.random_word
+  def initialize(file: "save.json", random_word:, max_attempt: 10)
+    @random_word = random_word
     @max_attempt = max_attempt
     @attempt = 0
     @file = file
@@ -31,13 +31,13 @@ class Game
       puts
       print "choose: "
       choose = gets.chomp.to_i
-      choosed_data = existing_data[choose]
+      chose_data = existing_data[choose]
       @save_instance.remove_from_record(choose)
-      cryptic_letters = choosed_data["cryptic_letters"]
-      incorrect_cryptic_letter = choosed_data["incorrect_cryptic_letter"]
-      attempt = choosed_data["attempt_left"]
+      cryptic_letters = chose_data["cryptic_letters"]
+      incorrect_cryptic_letter = chose_data["incorrect_cryptic_letter"]
+      attempt = chose_data["attempt_left"]
       @attempt = max_attempt - attempt
-      @random_word = choosed_data["word"]
+      @random_word = chose_data["word"]
     else
       return "No saved data. Run the program again and press 1"
     end
@@ -62,7 +62,7 @@ class Game
         @attempt += 1
       else
         puts
-        p incorrect_cryptic_letter
+        # puts incorrect_cryptic_letter
         incorrect_cryptic_letter << guess
         feedback(incorrect_cryptic_letter,  cryptic_letters)
         @attempt += 1
@@ -110,5 +110,3 @@ class Game
   end
 end
 
-game = Game.new(file: "save.json")
-p game.start

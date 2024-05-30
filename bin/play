@@ -1,0 +1,7 @@
+require "rubygems"
+require_relative "../lib/random_word"
+require_relative"../lib/game"
+
+game = Game.new(random_word: RandomWord.random_word, file: "save.json")
+p game.start
+
