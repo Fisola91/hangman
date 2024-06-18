@@ -36,8 +36,8 @@ To get started with the Hangman Game, follow these steps:
   </li>
 </ul
 
-## File Structure
 
+## File Structure
 <ul dir="auto">
   <li>
     hangman_game.rb: Main Ruby script containing the game logic.
