@@ -38,17 +38,17 @@ To get started with the Hangman Game, follow these steps:
 
 
 ## File Structure
-<ul dir="auto">
-  <li>
-    hangman_game.rb: Main Ruby script containing the game logic.
-  </li>
- <li>
-   google-10000-english-no-swears.txt: Text file containing a list of English words.
-  </li>
- <li>
-    save.json: JSON file used to store save game data.
-  </li>
-</ul    
+      <ul dir="auto">
+        <li>
+          hangman_game.rb: Main Ruby script containing the game logic.
+        </li>
+       <li>
+         google-10000-english-no-swears.txt: Text file containing a list of English words.
+        </li>
+       <li>
+          save.json: JSON file used to store save game data.
+        </li>
+      </ul    
 
 
 
