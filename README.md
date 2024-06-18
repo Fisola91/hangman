@@ -15,6 +15,7 @@ To get started with the Hangman Game, follow these steps:
 <ul dir="auto">
   <li>
     Guess the word by entering characters one at a time.
+        Incorrect guesses will result in the display of a hangman graphic.
   </li>
 </ul
 Guess the word by entering characters one at a time.
