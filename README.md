@@ -2,8 +2,8 @@
 To get started with the Hangman Game, follow these steps:
 
 Clone the Repository:
-   git clone https://github.com/your-username/hangman.git
-   cd hangman
+   div git clone https://github.com/your-username/hangman.git
+   div cd hangman
       
 **2. Run the Game:**
      Execute the following command to start the game:
