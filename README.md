@@ -2,14 +2,14 @@
 To get started with the Hangman Game, follow these steps:
 
 Clone the Repository:
-   div git clone https://github.com/your-username/hangman.git
-   div cd hangman
+git clone https://github.com/your-username/hangman.git
+cd hangman
       
-**2. Run the Game:**
+Run the Game:
      Execute the following command to start the game:
      ruby hangman_game.rb
      
-**3. Follow On-screen Instructions**: The game will prompt you to enter characters to guess the word. Follow the on-screen instructions to play.
+Follow On-screen Instructions: The game will prompt you to enter characters to guess the word. Follow the on-screen instructions to play.
 
 ## How to Play
 <ul dir="auto">
