@@ -1,7 +1,7 @@
 ## Getting Started
 To get started with the Hangman Game, follow these steps:
 
-**1. Clone the Repository:**
+1. Clone the Repository:
       git clone https://github.com/your-username/hangman.git
       cd hangman
       
@@ -17,7 +17,7 @@ To get started with the Hangman Game, follow these steps:
     Guess the word by entering characters one at a time.
   </li>
   <li>
-   Incorrect guesses will result in the display of a hangman graphic.
+   Incorrect guesses will result in the display of incorrect letters and game attempts left.
   </li>
    <li>
    You have a limited number of chances to guess the word.
