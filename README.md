@@ -12,6 +12,11 @@ To get started with the Hangman Game, follow these steps:
 **3. Follow On-screen Instructions**: The game will prompt you to enter characters to guess the word. Follow the on-screen instructions to play.
 
 ## How to Play
+<ul dir="auto">
+  <li>
+    Guess the word by entering characters one at a time.
+  </li>
+</ul
 Guess the word by entering characters one at a time.
 Incorrect guesses will result in the display of a hangman graphic.
 You have a limited number of chances to guess the word.
