@@ -2,8 +2,10 @@
 To get started with the Hangman Game, follow these steps:
 
 Clone the Repository:
-      git clone https://github.com/your-username/hangman.git
-      cd hangman
+      <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>your@pc:<span class="pl-k">~</span>$  git clone https://github.com/your-username/hangman.git</pre><div class="zeroclipboard-container"><clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="your@pc:~$ git clone git@github.com:Fisola91/hangman.git" tabindex="0" role="button">
+      <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>your@pc:<span class="pl-k">~</span>$ cd hangman</pre><div class="zeroclipboard-container"><clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="your@pc:~$ git clone git@github.com:Fisola91/hangman.git" tabindex="0" role="button">
+     
+
       
 Run the Game:
      Execute the following command to start the game:
